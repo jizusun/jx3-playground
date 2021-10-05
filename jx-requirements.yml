@@ -14,19 +14,23 @@ spec:
     gitName: github
     gitServer: https://github.com
     provider: minikube
+    registry: 10.217.5.51
   environments:
   - key: dev
+    owner: jizusun
+    repository: jx3-playground
   - key: staging
   - key: production
   ingress:
-    # nslookup console-openshift-console-2886795299-443-kota02.environments.katacoda.com
     domain: 35.201.124.219.nip.io
-    externalDNS: false
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: mygituser
   repository: bucketrepo
   secretStorage: local
   vault: {}

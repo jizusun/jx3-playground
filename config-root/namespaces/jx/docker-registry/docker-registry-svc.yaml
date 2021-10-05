@@ -1,0 +1,24 @@
+# Source: docker-registry/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: docker-registry
+  labels:
+    app: docker-registry
+    chart: docker-registry-1.9.6
+    release: docker-registry
+    heritage: Helm
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'docker-registry'
+  namespace: jx
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+      name: registry
+      targetPort: 5000
+  selector:
+    app: docker-registry
+    release: docker-registry

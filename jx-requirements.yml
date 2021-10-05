@@ -19,7 +19,8 @@ spec:
   - key: staging
   - key: production
   ingress:
-    domain: ""
+    # nslookup console-openshift-console-2886795299-443-kota02.environments.katacoda.com
+    domain: 35.201.124.219.nip.io
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
